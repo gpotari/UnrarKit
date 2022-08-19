@@ -102,8 +102,8 @@ let package = Package(
                 .define("SILENT"),
                 .define("RARDLL"),
                 .headerSearchPath(".")
-            ],
-            linkerSettings: [.linkedLibrary("c++")]),
+            ]
+        ),
         .testTarget(
             name: "UnrarKitTests",
             dependencies: ["UnrarKit"],
