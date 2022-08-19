@@ -15,6 +15,16 @@ let package = Package(
             dependencies: ["unrar-lib"],
             path: "Classes",
             publicHeadersPath: "public-headers",
+            cSettings: [
+                .headerSearchPath("."),
+                .headerSearchPath("../Classes/Categories"),
+                .headerSearchPath("../Libraries/unrar")
+            ],
+            cxxSettings: [
+                .headerSearchPath("."),
+                .headerSearchPath("../Classes/Categories"),
+                .headerSearchPath("../Libraries/unrar")
+            ],
             linkerSettings: [
 //                .linkedLibrary("c++"),
                 .linkedLibrary("z")
@@ -86,11 +96,13 @@ let package = Package(
                     "-Wno-unused-command-line-argument",
                     "-Wno-strict-prototypes",
                     "-Wno-conditional-uninitialized"]),
-                .headerSearchPath(".")],
+                .headerSearchPath(".")
+            ],
             cxxSettings: [
                 .define("SILENT"),
                 .define("RARDLL"),
-                .headerSearchPath(".")],
+                .headerSearchPath(".")
+            ],
             linkerSettings: [.linkedLibrary("c++")]),
         .testTarget(
             name: "UnrarKitTests",
