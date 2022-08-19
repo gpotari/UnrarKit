@@ -53,6 +53,7 @@
 #define RHDF_SOLID       0x10
 #define RHDF_DIRECTORY   0x20
 
+#include <stddef.h>
 
 struct RARHeaderData
 {
